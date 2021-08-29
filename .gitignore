@@ -1,0 +1,6 @@
+# Starting with '.' else of ignore
+.*
+!.*ignore
+
+# modules
+node_modules
