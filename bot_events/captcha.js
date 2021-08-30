@@ -50,7 +50,7 @@ module.exports = function main(bot = new Discord.Client(), dbClient = new (requi
                 const validCaptcha = ((await captchas_collection.find({ user: message.author.id }).toArray())[0] || { captcha: undefined }).captcha;
                 if (validCaptcha === undefined) return message.channel.send('No tienes ningún captcha.');
                 if (receivedCaptcha === validCaptcha) {
-                    message.channel.send(':white_check_mark:');
+                    message.channel.send(':white_check_mark: Captcha Correcto');
                     (await bot.guilds.cache.get(config.guild_id).members.fetch(message.author.id)).roles.add(config.roles.default);
                     await captchas_collection.deleteOne({ user: message.author.id });
                     logs_channel.send(
@@ -62,7 +62,7 @@ module.exports = function main(bot = new Discord.Client(), dbClient = new (requi
                             .setTimestamp(new Date())
                     );
                 } else {
-                    message.channel.send(':negative_squared_cross_mark:');
+                    message.channel.send(':negative_squared_cross_mark: Captcha Fallado');
                     logs_channel.send(
                         new Discord.MessageEmbed()
                             .setTitle(':negative_squared_cross_mark: Captcha Fallado')
