@@ -19,6 +19,7 @@
     "express": "^4.17.1",
     "ffmpeg": "^0.0.4",
     "fs": "^0.0.1-security",
+    "http": "*",
     "jsonc": "^2.0.0",
     "mongodb": "^4.1.0",
     "opusscript": "^0.0.7",

@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 const MongoDB = require('mongodb');
 const jsonc = require('jsonc');
-const path = require('path')
+const path = require('path');
+const http = require('http');
 const fs = require('fs');
 
 
@@ -35,6 +36,11 @@ if (!process.env.HEROKU) {
 async function start() {
     await dbClient.connect();
     bot.login(process.env.TOKEN);
+    
+    // Ping web for preventing idling
+    setInterval(() => {
+        http.get("https://devguys-bot.herokuapp.com/");
+    }, 3e5); // 5 min
 }
 start();
 
