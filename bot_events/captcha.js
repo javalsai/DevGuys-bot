@@ -43,7 +43,7 @@ module.exports = function main(bot = new Discord.Client(), dbClient = new (requi
             event: "message",
             run: async (message = new Discord.Message()) => {
                 // Extract captcha value
-                const receivedCaptcha = (message.content.match(/captcha:\s*([a-z0-9]{6})\s*/i) || [, undefined])[1];
+                const receivedCaptcha = (/captcha:\s*\<?\s*(?<captcha>[a-z0-9]{6})\s*\>?\s*/i.exec(message.content) || {groups: {}}).groups.captcha;
                 if (receivedCaptcha === undefined || message.channel.type !== 'dm') return;
 
                 // Validate captcha
