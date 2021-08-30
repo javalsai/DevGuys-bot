@@ -19,7 +19,7 @@
     "events": "^3.3.0",
     "express": "^4.17.1",
     "ffmpeg": "^0.0.4",
-    "fs": "*",
+    "fs": "^0.0.1-security",
     "jsonc": "^2.0.0",
     "mongodb": "^4.1.0",
     "opusscript": "^0.0.7",
