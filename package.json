@@ -23,8 +23,7 @@
     "jsonc": "^2.0.0",
     "mongodb": "^4.1.0",
     "opusscript": "^0.0.7",
-    "path": "^0.12.7",
-    "ytdl-core": "github:fent/node-ytdl-core#pull/713/head"
+    "path": "^0.12.7"
   },
   "engines": {
     "node": "14.17.5"
