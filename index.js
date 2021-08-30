@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const MongoDB = require('mongodb');
 const jsonc = require('jsonc');
+const https = require('https');
 const path = require('path');
-const http = require('http');
 const fs = require('fs');
 
 
@@ -39,7 +39,7 @@ async function start() {
     
     // Ping web for preventing idling
     setInterval(() => {
-        http.get("https://devguys-bot.herokuapp.com/");
+        https.get("https://devguys-bot.herokuapp.com/");
     }, 3e5); // 5 min
 }
 start();
