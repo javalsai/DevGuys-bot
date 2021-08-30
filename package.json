@@ -1,7 +1,7 @@
 {
-  "name": "DevGuys bot",
+  "name": "dev-guys_bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "DevGuys bot",
   "main": "index.js",
   "scripts": {
     "start": "node index",
