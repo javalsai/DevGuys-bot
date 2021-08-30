@@ -13,7 +13,6 @@
     "@discordjs/opus": "^0.4.0",
     "@discordjs/voice": "^0.3.0",
     "captcha-generator-alphanumeric": "^1.10.0",
-    "console-questions": "github:javalsai/console-questions",
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",
     "events": "^3.3.0",
