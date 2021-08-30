@@ -6,7 +6,7 @@ const fs = require('fs');
 
 
 // Eviromental file if it isn't in heroku
-if ((process.env._ || '').search('Heroku') === -1) {
+if (!process.env.HEROKU) {
     require('dotenv').config();
 }
 
@@ -25,7 +25,7 @@ const emitter = new (require('events').EventEmitter)();
 
 
 // Test local
-if ((process.env._ || '').search('Heroku') === -1) {
+if (!process.env.HEROKU) {
     require('./.test.js')(bot);
 }
 
