@@ -36,7 +36,7 @@ if (!process.env.HEROKU) {
 async function start() {
     await dbClient.connect();
     bot.login(process.env.TOKEN);
-    
+
     // Ping web for preventing idling
     setInterval(() => {
         https.get("https://devguys-bot.herokuapp.com/");
@@ -47,6 +47,7 @@ start();
 
 
 //////////////////// * Bot code * ////////////////////
+bot.setMaxListeners(200);
 bot.once('ready', () => {
     console.log('🤖 I\'m ready 🤖');
 });
