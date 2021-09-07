@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const Captcha = require('captcha-generator-alphanumeric').default;
+const Captcha = require('nodejs-captcha');
 
 module.exports = function main(bot = new Discord.Client(), dbClient = new (require('mongodb').MongoClient)(), config = {}, emitter = new (require('events').EventEmitter)()) {
     const captchas_collection = dbClient.db('nodejs').collection('captchas');
@@ -20,13 +20,13 @@ module.exports = function main(bot = new Discord.Client(), dbClient = new (requi
                 }
 
                 // Generate captcha
-                const userCaptcha = new Captcha();
+                const userCaptcha = Captcha();
 
                 // Save value to database and send it to user
                 await captchas_collection.insertOne({ user: member.user.id, captcha: userCaptcha.value });
                 member.user.send(
                     'Por favor, responde a este mensaje con: \`captcha: <valor del captcha>\`',
-                    new Discord.MessageAttachment(userCaptcha.JPEGStream, "captcha.jpeg")
+                    new Discord.MessageAttachment(Buffer.from(userCaptcha.image.split(",")[1], "base64"), "captcha.jpeg")
                 );
             }
         },
