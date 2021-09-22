@@ -1,6 +1,7 @@
-# Starting with '.' else of ignore
+# Starting with '.' else of ignore and rc
 .*
 !.*ignore
+!.*rc
 
 # modules
 node_modules
