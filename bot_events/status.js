@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-module.exports = function main(bot = new Discord.Client(), dbClient = new (require('mongodb').MongoClient)(), config = {}, emitter = new (require('events').EventEmitter)()) {
+module.exports = function main(bot = new Discord.Client(), dbClient = new (require('mongodb').MongoClient)(), config, emitter = new (require('events').EventEmitter)()) {
     return [
         {
             event: "ready",

@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const Captcha = require('nodejs-captcha');
 
-module.exports = function main(bot = new Discord.Client(), dbClient = new (require('mongodb').MongoClient)(), config = {}, emitter = new (require('events').EventEmitter)()) {
+module.exports = function main(bot = new Discord.Client(), dbClient = new (require('mongodb').MongoClient)(), config, emitter = new (require('events').EventEmitter)()) {
     const captchas_collection = dbClient.db('nodejs').collection('captchas');
 
     return [
