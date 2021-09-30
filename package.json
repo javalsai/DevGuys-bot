@@ -1,6 +1,6 @@
 {
   "name": "dev-guys_bot",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "DevGuys bot",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "dependencies": {
     "@discordjs/opus": "^0.4.0",
     "@discordjs/voice": "^0.3.0",
+    "discord-buttons": "^2.4.1",
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",
     "events": "^3.3.0",
@@ -19,9 +20,11 @@
     "ffmpeg": "^0.0.4",
     "fs": "^0.0.1-security",
     "https": "^1.0.0",
+    "i": "^0.3.6",
     "jsonc": "^2.0.0",
     "mongodb": "^4.1.0",
     "nodejs-captcha": "^0.0.6",
+    "npm": "^7.24.0",
     "opusscript": "^0.0.7",
     "path": "^0.12.7"
   },
