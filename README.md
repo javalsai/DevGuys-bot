@@ -28,9 +28,9 @@ Generates a captcha when a user joins a server.
 
 ## Random
 
-Generates random numbers with comand `/BR` or `/BigRandom`, it takes an option argument, a number this modes (add the letter at the end):
-* **`l`**: By number length. Ej: `/BR 3l` ➔ `134`
-* **`n`**: By number. Ej: `/BR 3n` ➔ `2`
+Generates random numbers with comand `/BR` or `/BigRandom`, it takes an optional argument, a number with this modes (add the letter at the end):
+* **`l`**: By number length. Example: **input**: `/BR 3l` ➔ **output**: `134`
+* **`n`**: By number. Example: **input**: `/BR 3n` ➔ **output**: `2`
 
 ### Config: Nothing
 
