@@ -14,6 +14,7 @@ module.exports = function main(bot = new Discord.Client(), dbClient = new (requi
         {
             event: "guildMemberAdd",
             run: async (member = new Discord.GuildMember()) => {
+                if(config.guild_id !== member.cuild.id) return;
                 // If has already a captcha, delete it
                 if ((await captchas_collection.find({ user: member.user.id }).toArray())[0]) {
                     await captchas_collection.deleteOne({ user: member.user.id });
@@ -33,6 +34,7 @@ module.exports = function main(bot = new Discord.Client(), dbClient = new (requi
         {
             event: "guildMemberRemove",
             run: async (member = new Discord.GuildMember()) => {
+                if(config.guild_id !== member.cuild.id) return;
                 // If user is still in db, remove from it
                 if ((await captchas_collection.find({ user: member.user.id }).toArray())[0]) {
                     await captchas_collection.deleteOne({ user: member.user.id });
